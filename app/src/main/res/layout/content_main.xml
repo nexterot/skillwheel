@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flipper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+<!--
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_greeting"
+            android:layout_width="366dp"
+            android:layout_height="89dp"
+            android:text="@string/greeting_info"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+-->
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/barbarianSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/wheel_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barbarianSpinner">
+
+            <ImageView
+                android:id="@+id/wheelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:src="@drawable/wheel_template3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.57" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachine1Button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_1_2"
+                app:layout_constraintEnd_toStartOf="@+id/warMachine2Button"
+                app:layout_constraintTop_toTopOf="@+id/warMachine2Button" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachine2Button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_2_2"
+                app:layout_constraintEnd_toStartOf="@+id/warMachine3Button"
+                app:layout_constraintTop_toTopOf="@+id/warMachine3Button" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachine3Button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="16dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_3_2"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="161dp" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachineGoblinHelpButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_goblin_help"
+                app:layout_constraintEnd_toStartOf="@+id/warMachinePlagueAidButton"
+                app:layout_constraintTop_toTopOf="@+id/warMachinePlagueAidButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachineFastBallistaButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="24dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_fast_ballista"
+                app:layout_constraintEnd_toStartOf="@+id/warMachineGoblinHelpButton"
+                app:layout_constraintTop_toTopOf="@+id/warMachineGoblinHelpButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachineTripleCatapultButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_triple_catapult"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.38"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/warMachineGoblinHelpButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachinePlagueAidButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_plague_aid"
+                app:layout_constraintTop_toBottomOf="@+id/warMachineAidButton"
+                tools:layout_editor_absoluteX="161dp" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachineAidButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_heal"
+                app:layout_constraintTop_toBottomOf="@+id/warMachine3Button"
+                tools:layout_editor_absoluteX="161dp" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachineBallistaButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_ballista"
+                app:layout_constraintEnd_toStartOf="@+id/warMachineCatapultButton"
+                app:layout_constraintTop_toTopOf="@+id/warMachineCatapultButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/warMachineCatapultButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/war_machines_catapult"
+                app:layout_constraintEnd_toStartOf="@+id/warMachineAidButton"
+                app:layout_constraintTop_toTopOf="@+id/warMachineAidButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/learningBaseButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/learning_1"
+                app:layout_constraintBottom_toTopOf="@+id/learningPowerOfBloodButton"
+                app:layout_constraintEnd_toStartOf="@+id/learningExpertButton"
+                app:layout_constraintStart_toStartOf="@+id/learningPowerOfBloodButton"
+                app:layout_constraintTop_toTopOf="@+id/learningExpertButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/learningAdvancedButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/learning_2"
+                app:layout_constraintBottom_toTopOf="@+id/learningBodybuildingButton"
+                app:layout_constraintEnd_toEndOf="@+id/learningBodybuildingButton"
+                app:layout_constraintStart_toEndOf="@+id/learningWarcryButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/learningExpertButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/learning_3"
+                app:layout_constraintBottom_toTopOf="@+id/learningWarcryButton"
+                app:layout_constraintEnd_toEndOf="@+id/learningWarcryButton"
+                app:layout_constraintStart_toStartOf="@+id/learningWarcryButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/learningPowerOfBloodButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/learning_power_of_blood"
+                app:layout_constraintBottom_toTopOf="@+id/learningBaldButton"
+                app:layout_constraintEnd_toStartOf="@+id/learningWarcryButton"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/learningWarcryButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/learningBodybuildingButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/learning_bodybuilding"
+                app:layout_constraintBottom_toTopOf="@+id/learningDarkRevelationButton"
+                app:layout_constraintEnd_toEndOf="@+id/learningDarkRevelationButton"
+                app:layout_constraintStart_toEndOf="@+id/learningBaldButton"
+                app:layout_constraintTop_toTopOf="@+id/learningWarcryButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/learningWarcryButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/learning_warcry"
+                app:layout_constraintBottom_toTopOf="@+id/learningBaldButton"
+                app:layout_constraintEnd_toEndOf="@+id/learningBaldButton"
+                app:layout_constraintStart_toStartOf="@+id/learningBaldButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/learningDarkRevelationButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/learning_dark_revelation"
+                app:layout_constraintBottom_toTopOf="@+id/learningMentorButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/learningBaldButton"
+                app:layout_constraintTop_toTopOf="@+id/learningBaldButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/learningBaldButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/learning_bald"
+                app:layout_constraintBottom_toTopOf="@+id/learningMentorButton"
+                app:layout_constraintEnd_toEndOf="@+id/learningMentorButton"
+                app:layout_constraintStart_toStartOf="@+id/learningMentorButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/learningMentorButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/learning_mentor"
+                app:layout_constraintBottom_toTopOf="@+id/memoryBloodButton"
+                app:layout_constraintEnd_toStartOf="@+id/warMachineTripleCatapultButton"
+                app:layout_constraintHorizontal_bias="0.12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.73" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/basicBloodButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/basic_rage2"
+                app:layout_constraintBottom_toBottomOf="@+id/advancedRageButton"
+                app:layout_constraintEnd_toStartOf="@+id/advancedRageButton"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/advancedRageButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/expertBaseBlood"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/expert_rage2"
+                app:layout_constraintBottom_toBottomOf="@+id/advancedRageButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/advancedRageButton"
+                app:layout_constraintTop_toTopOf="@+id/advancedRageButton" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/advancedRageButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/advanced_rage2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/absoluteRageButton"
+                app:layout_constraintVertical_bias="0.9" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/ultimateRageButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ultimate_blood2"
+                app:layout_constraintBottom_toBottomOf="@+id/expertBaseBlood"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toEndOf="@+id/expertBaseBlood"
+                app:layout_constraintTop_toTopOf="@+id/expertBaseBlood" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/absoluteRageButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/absolute_rage2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.58000004" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/mightOverMagicButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/mightovermagic_blood2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/absoluteRageButton"
+                app:layout_constraintHorizontal_bias="0.87"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/absoluteRageButton"
+                app:layout_constraintVertical_bias="0.060000002"
+                app:layout_constraintVertical_weight="1" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/memoryBloodButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/memory_blood2"
+                app:layout_constraintBottom_toTopOf="@+id/absoluteRageButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/wheelView"
+                app:layout_constraintVertical_bias="0.93" />
+
+            <ru.nexterot.skillwheel30.WheelObjView
+                android:id="@+id/powerfulBlowButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/powerfulblow_blood2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@+id/absoluteRageButton"
+                app:layout_constraintTop_toBottomOf="@+id/absoluteRageButton"
+                app:layout_constraintVertical_bias="0.060000002"
+                app:layout_constraintVertical_weight="1" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_demonlord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_demonlord"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_knight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_knight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_necromancer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_necromancer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_ranger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_ranger"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_runemage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_runemage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_warlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_warlock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_wizard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_wizard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+</ViewFlipper>

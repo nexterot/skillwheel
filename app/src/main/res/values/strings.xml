@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Skillwheel 3.0</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Skillwheel 3.0</string>
+    <string name="nav_header_subtitle" translatable="false">nexterot@mail.ru</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+
+    <string name="drawer_barbarian">Barbarian</string>
+    <string name="drawer_demonlord">Demon Lord</string>
+    <string name="drawer_knight">Knight</string>
+    <string name="drawer_necromancer">Necromancer</string>
+    <string name="drawer_ranger">Ranger</string>
+    <string name="drawer_runemage">Runemage</string>
+    <string name="drawer_warlock">Warlock</string>
+    <string name="drawer_wizard">Wizard</string>
+
+    <string name="greeting_info">
+        Welcome to Skillwheel 3.0 by nexterot!\n\n
+        To begin, swipe right, or tap three lines in upper left corner
+    </string>
+
+    <string name="wheel_barbarian" translatable="false">Barbarian wheel</string>
+    <string name="wheel_demonlord" translatable="false">Demon Lord wheel</string>
+    <string name="wheel_knight" translatable="false">Knight wheel</string>
+    <string name="wheel_necromancer" translatable="false">Necromancer wheel</string>
+    <string name="wheel_ranger" translatable="false">Ranger wheel</string>
+    <string name="wheel_runemage" translatable="false">Runemage wheel</string>
+    <string name="wheel_warlock" translatable="false">Warlock wheel</string>
+    <string name="wheel_wizard" translatable="false">Wizard wheel</string>
+
+    <string name="basic_blood_rage">Basic Blood Rage</string>
+    <string name="basic_blood_rage_info">
+        Unique barbarian skill. Allows Stronghold creatures in hero\'s army to achieve a first level
+        of rage while fighting. The resulting Blood Rage grants them appropriate combat bonuses.
+    </string>
+    <string name="advanced_blood_rage">Advanced Blood Rage</string>
+    <string name="expert_blood_rage">Expert Blood Rage</string>
+    <string name="ultimate_blood_rage">Ultimate Blood Rage</string>
+    <string name="might_over_magic">Might Over Magic</string>
+    <string name="memory_of_our_blood">Memory Of Our Blood</string>
+    <string name="powerful_blow">Powerful Blow</string>
+    <string name="absolute_rage">Absolute Rage</string>
+
+</resources>

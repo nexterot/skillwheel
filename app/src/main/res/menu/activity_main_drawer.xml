@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_barbarian"
+            android:icon="@drawable/barbarian_gotai"
+            android:title="@string/drawer_barbarian" />
+        <item
+            android:id="@+id/nav_demonlord"
+            android:icon="@drawable/demonlord_agrael"
+            android:title="@string/drawer_demonlord" />
+        <item
+            android:id="@+id/nav_knight"
+            android:icon="@drawable/knight_freyda"
+            android:title="@string/drawer_knight" />
+        <item
+            android:id="@+id/nav_necromancer"
+            android:icon="@drawable/necromancer_arantir"
+            android:title="@string/drawer_necromancer" />
+        <item
+            android:id="@+id/nav_ranger"
+            android:icon="@drawable/ranger_alaron"
+            android:title="@string/drawer_ranger" />
+        <item
+            android:id="@+id/nav_runemage"
+            android:icon="@drawable/runemage_tolghar"
+            android:title="@string/drawer_runemage" />
+        <item
+            android:id="@+id/nav_warlock"
+            android:icon="@drawable/warlock_raelag"
+            android:title="@string/drawer_warlock" />
+        <item
+            android:id="@+id/nav_wizard"
+            android:icon="@drawable/wizard_maahir"
+            android:title="@string/drawer_wizard" />
+    </group>
+</menu>

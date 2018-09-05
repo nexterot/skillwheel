@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Skillwheel 3.0</string>
+    <string name="drawer_barbarian">Варвар</string>
+    <string name="drawer_demonlord">Демон</string>
+    <string name="drawer_knight">Рыцарь</string>
+    <string name="drawer_necromancer">Некромант</string>
+    <string name="drawer_ranger">Рейнджер</string>
+    <string name="drawer_runemage">Рунный жрец</string>
+    <string name="drawer_warlock">Чернокнижник</string>
+    <string name="drawer_wizard">Маг</string>
+    <string name="greeting_info">
+        Добро пожаловать в Колесо умений 3.0 от nexterot!\n\n
+        Чтобы начать, сделайте слайд вправо, либо нажмите на три линии в верхнем левом углу
+    </string>
+    <string name="nav_header_title" translatable="false">Колесо умений 3.0</string>
+</resources>

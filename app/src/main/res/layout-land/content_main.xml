@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flipper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+<!--
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_greeting"
+            android:layout_width="366dp"
+            android:layout_height="89dp"
+            android:text="@string/greeting_info"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+-->
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/barbarianSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/wheel_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barbarianSpinner">
+
+            <ImageView
+                android:id="@+id/wheelView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/wheel_template" />
+
+            <!--
+            <ImageButton
+                android:id="@+id/warMachine1Button"
+                android:layout_width="0dp"
+                android:layout_height="20"
+                android:layout_marginEnd="4dp"
+                android:layout_marginLeft="113dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginStart="113dp"
+                android:layout_marginTop="8dp"
+                android:background="none"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toStartOf="@+id/warMachine2Button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/warMachine2Button"
+                app:srcCompat="@drawable/war_machines_1" />
+
+            <ImageButton
+                android:id="@+id/warMachine2Button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="4dp"
+                android:background="none"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/warMachine3Button"
+                app:layout_constraintEnd_toStartOf="@+id/warMachine3Button"
+                app:layout_constraintStart_toEndOf="@+id/warMachine1Button"
+                app:layout_constraintTop_toTopOf="@+id/warMachine3Button"
+                app:srcCompat="@drawable/war_machines_2" />
+
+            <ImageButton
+                android:id="@+id/warMachine3Button"
+                android:layout_width="0dp"
+                android:layout_height="20"
+                android:layout_marginEnd="199dp"
+                android:layout_marginRight="199dp"
+                android:layout_marginTop="60dp"
+                android:background="none"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/warMachine2Button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/war_machines_3" />
+                -->
+
+            <ImageButton
+                android:id="@+id/basicBloodButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/absoluteRageButton"
+                app:layout_constraintEnd_toStartOf="@+id/advancedRageButton"
+                app:layout_constraintHorizontal_bias="0.83"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/advancedRageButton"
+                app:layout_constraintVertical_bias="0.01999998"
+                app:srcCompat="@drawable/basic_rage" />
+
+            <ImageButton
+                android:id="@+id/expertBaseBlood"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/advancedRageButton"
+                app:layout_constraintEnd_toStartOf="@+id/absoluteRageButton"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toEndOf="@+id/advancedRageButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.9"
+                app:srcCompat="@drawable/expert_rage" />
+
+            <ImageButton
+                android:id="@+id/advancedRageButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/absoluteRageButton"
+                app:layout_constraintEnd_toStartOf="@+id/absoluteRageButton"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.26"
+                app:srcCompat="@drawable/advanced_rage" />
+
+            <ImageButton
+                android:id="@+id/ultimateRageButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/absoluteRageButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.83"
+                app:layout_constraintStart_toEndOf="@+id/absoluteRageButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.26"
+                app:srcCompat="@drawable/ultimate_blood" />
+
+            <ImageButton
+                android:id="@+id/absoluteRageButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/absolute_rage" />
+
+            <ImageButton
+                android:id="@+id/memoryBloodButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/absoluteRageButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/wheelView"
+                app:layout_constraintVertical_bias="0.89"
+                app:srcCompat="@drawable/memory_blood" />
+
+            <ImageButton
+                android:id="@+id/mightOverMagicButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/absoluteRageButton"
+                app:layout_constraintHorizontal_bias="0.82"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/absoluteRageButton"
+                app:layout_constraintVertical_bias="0.09"
+                app:layout_constraintVertical_weight="1"
+                app:srcCompat="@drawable/mightovermagic_blood" />
+
+            <ImageButton
+                android:id="@+id/powerfulBlowButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.18"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="@+id/absoluteRageButton"
+                app:layout_constraintTop_toBottomOf="@+id/absoluteRageButton"
+                app:layout_constraintVertical_bias="0.09"
+                app:layout_constraintVertical_weight="1"
+                app:srcCompat="@drawable/powerfulblow_blood" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_demonlord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_demonlord"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_knight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_knight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_necromancer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_necromancer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_ranger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_ranger"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_runemage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_runemage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_warlock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_warlock"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_wheel_wizard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/wheel_wizard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+</ViewFlipper>
